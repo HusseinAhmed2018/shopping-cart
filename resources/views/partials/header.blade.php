@@ -8,12 +8,10 @@
   <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Shopping Cart <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Shopping Cart <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    User Account
-        </a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> User Account</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">User Account</a>
           <a class="dropdown-item" href="#">Logout</a>
