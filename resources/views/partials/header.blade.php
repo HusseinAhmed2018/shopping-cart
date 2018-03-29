@@ -1,32 +1,33 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{ route('product.index') }}">Brand</a>
+    </div>
 
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Shopping Cart <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> User Management</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          @if(!Auth::check())
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ route('product.shoppingCart') }}"><i class="fas fa-shopping-cart"></i> Shopping Cart <span class="badge badge-light">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span></a></li>
 
-            <a class="dropdown-item" href="{{ route('user.signup') }}">Signup</a>
-            <a class="dropdown-item" href="{{ route('user.signin') }}">Signin</a>
-          @else
-            <div class="dropdown-item">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> User Management <span class="caret"></span></a>
+
+          <ul class="dropdown-menu">
+            @if(!Auth::check())
+            <li><a href="{{ route('user.signup') }}">Signup</a></li>
+            <li><a href="{{ route('user.signin') }}">Signin</a></li>
+            @else
+            <li>
               <form action="{{ route('user.logout') }}" method="post">
                 {{ csrf_field() }}
                 <input type="submit" style="text-decoration: none; color: black" class="btn btn-link" value="logout">
               </form>
-            </div>
-          @endif
-      </li>
+            </li>
+            @endif
+          </ul>
 
-    </ul>
-  </div>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Laravel Shoping
+    Laravel Shopping
 @endsection
 
 @section('content')
@@ -15,8 +15,8 @@
                 <h3>{{ $product->title }}</h3>
                 <p class="description">{{ $product->description }}</p>
                 <div class="clearfix">
-                    <div class="float-left price">${{ $product->price }}</div>
-                    <a href="#" class="btn btn-success float-right">Action</a>
+                    <div class="pull-left price">${{ $product->price }}</div>
+                    <a href="{{ route('product.addToCart', ['id' => $product->id]) }}" class="btn btn-success pull-right">Add to Cart</a>
                 </div>
             </div>
         </div>
