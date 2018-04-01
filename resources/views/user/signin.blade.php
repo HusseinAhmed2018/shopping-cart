@@ -30,6 +30,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Sign In</button>
             </form>
+            <p>Don't have an account <a href="{{ route('user.signup') }}">Sign Up instead!</a></p>
         </div>
     </div>
 @endsection

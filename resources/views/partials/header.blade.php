@@ -17,6 +17,8 @@
             <li><a href="{{ route('user.signup') }}">Signup</a></li>
             <li><a href="{{ route('user.signin') }}">Signin</a></li>
             @else
+            <li><a href="{{ route('user.profile') }}">User Profile</a></li>
+              <li role="separator" class="divider"></li>
             <li>
               <form action="{{ route('user.logout') }}" method="post">
                 {{ csrf_field() }}
